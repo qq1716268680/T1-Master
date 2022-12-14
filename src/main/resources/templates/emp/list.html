@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Dashboard Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- Custom styles for this template -->
+		<link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+		<style type="text/css">
+			/* Chart.js */
+			
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+		</style>
+	</head>
+	<body>
+        <div th:replace="commons/bar::topbar"></div>
+		<div class="container-fluid">
+			<div class="row">
+			<div th:replace="commons/bar::#sidebar(activeUri='emps')"></div>
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<!--					<h2><a class="btn btn-sm btn-success" href="emp" th:href="@{/emp}">增加员工</a></h2>-->
+					
+					<div class="table-responsive">
+						<table class="table table-striped table-sm">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>lastName</th>
+									<th>email</th>
+									<th>gender</th>
+									<th>department</th>
+									<th>birth</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id ="homeData">
+
+							</tbody>
+						</table>
+					</div>
+						<ul class="pagination">
+							<li><a href="javascript:prevpage(0)">&laquo;</a></li>
+							<li><a href="javascript:clickA(2)">2</a></li>
+							<li><a href="javascript:clickA(3)">3</a></li>
+							<li><a href="javascript:clickA(4)">4</a></li>
+							<li><a href="javascript:clickA(5)">5</a></li>
+							<li><a href="javascript:nextpage(0)">&raquo;</a></li>
+						</ul>
+
+				</main>
+				<form id="deleteForm"  method="post">
+					<input type="hidden" name="_method" value="delete">						
+				</form>
+
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+<!--		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/asserts/js/jquery-3.2.1.slim.min.js}" ></script>-->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js" th:src="@{/asserts/js/popper.min.js}"></script>
+		<script type="text/javascript" src="asserts/js/bootstrap.min.js" th:src="@{/asserts/js/bootstrap.min.js}"></script>
+
+		<!-- Icons -->
+		<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+		<script>
+			feather.replace()
+		</script>
+		<script type="text/javascript">
+			var currentPage=0;
+			//1、默认加载第一页
+			clickA(0);
+			//2、加载数据的函数
+			function clickA(key){
+				$(".h").empty();
+				$.ajax({
+					type : "post",
+					contentType:'application/json',
+					async : true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+					url : "homeDataSearch", //请求发送到Page处
+					data : JSON.stringify({'pageIndex':key,'pageSize':10}),
+					dataType : "json", //返回数据形式为json
+					success : function(result) {
+//请求成功时执行该函数内容，result即为服务器返回的json对象
+						var temp="";
+						for(var k in result){
+//将获得的数据加入col-md-12 column
+							temp+='<tr >\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col1+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col2+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col3+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col4+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col5+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col6+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td>\n' +
+									'\t\t\t\t\t\t\t\t\t\t<a type="button" class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">修改</a>\n' +
+									'\t\t\t\t\t\t\t\t\t\t<button th:attr="del_uri=@{/emp/}+${emp.id}" type="submit" class="btn btn-sm btn-danger deleteEmp">删除</button>\n' +
+									'\t\t\t\t\t\t\t\t\t</td>\n' +
+									'\t\t\t\t\t\t\t\t\t\n' +
+									'\t\t\t\t\t\t\t\t</tr>'
+// 							$("#con").before("<h2 class='h'>"+result[k].title+"</2><p class='h'>"+result[k].name+"</p><p class='h'><a class='btn' href='javascript:clickA(0);'>View details »</a>"+"</p>");
+//改变a标签prev的属性，下面这两句是重点
+
+
+						}
+						$("#homeData").html(temp);
+						$("#prev").attr("href","javascript:prevpage("+key+")");
+						$("#next").attr("href","javascript:nextpage("+key+")");
+						var childs = $(".pagination").children();
+						for (let i = 1; i < childs.length-1; i++) {
+							var nextKey = key+i;
+							var nextKey2 = key+1+i;
+							$(childs[i].firstElementChild).attr("href","javascript:clickA("+nextKey+")");
+							$(childs[i].firstElementChild).html(nextKey2);
+						}
+					},
+					error : function(XMLHttpRequest, textStatus,errorMsg) {
+//请求失败时执行该函数
+						alert("错误码:"+XMLHttpRequest.status);
+						alert("错误状态:"+XMLHttpRequest.readyState);
+						alert("数据请求数据失败!"+errorMsg);
+					}
+				});
+			}
+			//3、实现上一页功能:
+			function prevpage(prev) {
+				if (prev == 0) {
+					clickA(0);
+				} else {
+					prev = prev - 3;
+					clickA(prev);
+				}
+			}
+			function nextpage(numa){
+//获取当前的key
+//将key+3，然后交给clickA
+//获取后台带到的key，在key的基础上增加
+				numa=numa+3;
+				clickA(numa);
+			}
+
+
+
+
+
+
+			$(".deleteEmp").click(function(){
+				$("#deleteForm").attr("action",$(this).attr("del_uri")).submit();	
+				
+			});	
+			
+		
+		</script>
+
+		<!-- Graphs -->
+		<script type="text/javascript" src="asserts/js/Chart.min.js" th:src="@{/asserts/js/Chart.min.js}"></script>
+		<script>
+			var ctx = document.getElementById("myChart");
+			var myChart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+					datasets: [{
+						data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+						lineTension: 0,
+						backgroundColor: 'transparent',
+						borderColor: '#007bff',
+						borderWidth: 4,
+						pointBackgroundColor: '#007bff'
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: false
+							}
+						}]
+					},
+					legend: {
+						display: false,
+					}
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

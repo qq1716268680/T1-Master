@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fiberhome.owtb.ofsc_crawler.mapper.EnterpriseExtraMapper">
+
+    <resultMap id="BaseResultMap" type="com.fiberhome.owtb.ofsc_crawler.entity.EnterpriseExtra">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+            <result property="col1" column="col1" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,activity_id,col1
+    </sql>
+</mapper>

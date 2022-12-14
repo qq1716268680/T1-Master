@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fiberhome.owtb.ofsc_crawler.mapper.EnterpriseMaterialMapper">
+
+    <resultMap id="BaseResultMap" type="com.fiberhome.owtb.ofsc_crawler.entity.EnterpriseMaterial">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+            <result property="inventoryType" column="inventory_type" jdbcType="VARCHAR"/>
+            <result property="materialDescription" column="material_description" jdbcType="VARCHAR"/>
+            <result property="serialNumber" column="serial_number" jdbcType="VARCHAR"/>
+            <result property="quantity" column="quantity" jdbcType="VARCHAR"/>
+            <result property="c665" column="C665" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,activity_id,inventory_type,
+        material_description,serial_number,quantity,
+        C665
+    </sql>
+</mapper>

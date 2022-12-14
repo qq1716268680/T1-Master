@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fiberhome.owtb.ofsc_crawler.mapper.EnterpriseData1Mapper">
+
+    <resultMap id="BaseResultMap" type="com.fiberhome.owtb.ofsc_crawler.entity.EnterpriseData1">
+            <id property="id" column="Id" jdbcType="BIGINT"/>
+            <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="update_by" jdbcType="TIMESTAMP"/>
+            <result property="col1" column="col1" jdbcType="VARCHAR"/>
+            <result property="col2" column="col2" jdbcType="VARCHAR"/>
+            <result property="col3" column="col3" jdbcType="VARCHAR"/>
+            <result property="col4" column="col4" jdbcType="VARCHAR"/>
+            <result property="col5" column="col5" jdbcType="VARCHAR"/>
+            <result property="col6" column="col6" jdbcType="VARCHAR"/>
+            <result property="col7" column="col7" jdbcType="VARCHAR"/>
+            <result property="col8" column="col8" jdbcType="VARCHAR"/>
+            <result property="col9" column="col9" jdbcType="VARCHAR"/>
+            <result property="col10" column="col10" jdbcType="VARCHAR"/>
+            <result property="col11" column="col11" jdbcType="VARCHAR"/>
+            <result property="col12" column="col12" jdbcType="VARCHAR"/>
+            <result property="col13" column="col13" jdbcType="VARCHAR"/>
+            <result property="col14" column="col14" jdbcType="VARCHAR"/>
+            <result property="col15" column="col15" jdbcType="VARCHAR"/>
+            <result property="col16" column="col16" jdbcType="VARCHAR"/>
+            <result property="col17" column="col17" jdbcType="VARCHAR"/>
+            <result property="col18" column="col18" jdbcType="VARCHAR"/>
+            <result property="col19" column="col19" jdbcType="VARCHAR"/>
+            <result property="col20" column="col20" jdbcType="VARCHAR"/>
+            <result property="col21" column="col21" jdbcType="VARCHAR"/>
+            <result property="col22" column="col22" jdbcType="VARCHAR"/>
+            <result property="col23" column="col23" jdbcType="VARCHAR"/>
+            <result property="col24" column="col24" jdbcType="VARCHAR"/>
+            <result property="col25" column="col25" jdbcType="VARCHAR"/>
+            <result property="col26" column="col26" jdbcType="VARCHAR"/>
+            <result property="col27" column="col27" jdbcType="VARCHAR"/>
+            <result property="col28" column="col28" jdbcType="VARCHAR"/>
+            <result property="col29" column="col29" jdbcType="VARCHAR"/>
+            <result property="col30" column="col30" jdbcType="VARCHAR"/>
+            <result property="col31" column="col31" jdbcType="VARCHAR"/>
+            <result property="col32" column="col32" jdbcType="VARCHAR"/>
+            <result property="col33" column="col33" jdbcType="VARCHAR"/>
+            <result property="col34" column="col34" jdbcType="VARCHAR"/>
+            <result property="col35" column="col35" jdbcType="VARCHAR"/>
+            <result property="col36" column="col36" jdbcType="VARCHAR"/>
+            <result property="col37" column="col37" jdbcType="VARCHAR"/>
+            <result property="col38" column="col38" jdbcType="VARCHAR"/>
+            <result property="col39" column="col39" jdbcType="VARCHAR"/>
+            <result property="col40" column="col40" jdbcType="VARCHAR"/>
+            <result property="col41" column="col41" jdbcType="VARCHAR"/>
+            <result property="col42" column="col42" jdbcType="VARCHAR"/>
+            <result property="col43" column="col43" jdbcType="VARCHAR"/>
+            <result property="col44" column="col44" jdbcType="VARCHAR"/>
+            <result property="col45" column="col45" jdbcType="VARCHAR"/>
+            <result property="col46" column="col46" jdbcType="VARCHAR"/>
+            <result property="col47" column="col47" jdbcType="VARCHAR"/>
+            <result property="col48" column="col48" jdbcType="VARCHAR"/>
+            <result property="col49" column="col49" jdbcType="VARCHAR"/>
+            <result property="col50" column="col50" jdbcType="VARCHAR"/>
+            <result property="col51" column="col51" jdbcType="VARCHAR"/>
+            <result property="col52" column="col52" jdbcType="VARCHAR"/>
+            <result property="col53" column="col53" jdbcType="VARCHAR"/>
+            <result property="col54" column="col54" jdbcType="VARCHAR"/>
+            <result property="col55" column="col55" jdbcType="VARCHAR"/>
+            <result property="col56" column="col56" jdbcType="VARCHAR"/>
+            <result property="col57" column="col57" jdbcType="VARCHAR"/>
+            <result property="col58" column="col58" jdbcType="VARCHAR"/>
+            <result property="col59" column="col59" jdbcType="VARCHAR"/>
+            <result property="col60" column="col60" jdbcType="VARCHAR"/>
+            <result property="col61" column="col61" jdbcType="VARCHAR"/>
+            <result property="col62" column="col62" jdbcType="VARCHAR"/>
+            <result property="col63" column="col63" jdbcType="VARCHAR"/>
+            <result property="col64" column="col64" jdbcType="VARCHAR"/>
+            <result property="col65" column="col65" jdbcType="VARCHAR"/>
+            <result property="col66" column="col66" jdbcType="VARCHAR"/>
+            <result property="col67" column="col67" jdbcType="VARCHAR"/>
+            <result property="col68" column="col68" jdbcType="VARCHAR"/>
+            <result property="col69" column="col69" jdbcType="VARCHAR"/>
+            <result property="col70" column="col70" jdbcType="VARCHAR"/>
+            <result property="col71" column="col71" jdbcType="VARCHAR"/>
+            <result property="col72" column="col72" jdbcType="VARCHAR"/>
+            <result property="col73" column="col73" jdbcType="VARCHAR"/>
+            <result property="col74" column="col74" jdbcType="VARCHAR"/>
+            <result property="col75" column="col75" jdbcType="VARCHAR"/>
+            <result property="col76" column="col76" jdbcType="VARCHAR"/>
+            <result property="col77" column="col77" jdbcType="VARCHAR"/>
+            <result property="col78" column="col78" jdbcType="VARCHAR"/>
+            <result property="col79" column="col79" jdbcType="VARCHAR"/>
+            <result property="col80" column="col80" jdbcType="VARCHAR"/>
+            <result property="col81" column="col81" jdbcType="VARCHAR"/>
+            <result property="col82" column="col82" jdbcType="VARCHAR"/>
+            <result property="col83" column="col83" jdbcType="VARCHAR"/>
+            <result property="col84" column="col84" jdbcType="VARCHAR"/>
+            <result property="col85" column="col85" jdbcType="VARCHAR"/>
+            <result property="col86" column="col86" jdbcType="VARCHAR"/>
+            <result property="col87" column="col87" jdbcType="VARCHAR"/>
+            <result property="col88" column="col88" jdbcType="VARCHAR"/>
+            <result property="col89" column="col89" jdbcType="VARCHAR"/>
+            <result property="col90" column="col90" jdbcType="VARCHAR"/>
+            <result property="col91" column="col91" jdbcType="VARCHAR"/>
+            <result property="col92" column="col92" jdbcType="VARCHAR"/>
+            <result property="col93" column="col93" jdbcType="VARCHAR"/>
+            <result property="col94" column="col94" jdbcType="VARCHAR"/>
+            <result property="col95" column="col95" jdbcType="VARCHAR"/>
+            <result property="col96" column="col96" jdbcType="VARCHAR"/>
+            <result property="col97" column="col97" jdbcType="VARCHAR"/>
+            <result property="col98" column="col98" jdbcType="VARCHAR"/>
+            <result property="col99" column="col99" jdbcType="VARCHAR"/>
+            <result property="col100" column="col100" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Id,activity_id,create_time,
+        create_by,update_time,update_by,
+        col1,col2,col3,
+        col4,col5,col6,
+        col7,col8,col9,
+        col10,col11,col12,
+        col13,col14,col15,
+        col16,col17,col18,
+        col19,col20,col21,
+        col22,col23,col24,
+        col25,col26,col27,
+        col28,col29,col30,
+        col31,col32,col33,
+        col34,col35,col36,
+        col37,col38,col39,
+        col40,col41,col42,
+        col43,col44,col45,
+        col46,col47,col48,
+        col49,col50,col51,
+        col52,col53,col54,
+        col55,col56,col57,
+        col58,col59,col60,
+        col61,col62,col63,
+        col64,col65,col66,
+        col67,col68,col69,
+        col70,col71,col72,
+        col73,col74,col75,
+        col76,col77,col78,
+        col79,col80,col81,
+        col82,col83,col84,
+        col85,col86,col87,
+        col88,col89,col90,
+        col91,col92,col93,
+        col94,col95,col96,
+        col97,col98,col99,
+        col100
+    </sql>
+</mapper>

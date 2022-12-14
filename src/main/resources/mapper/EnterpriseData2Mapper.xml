@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fiberhome.owtb.ofsc_crawler.mapper.EnterpriseData2Mapper">
+
+    <resultMap id="BaseResultMap" type="com.fiberhome.owtb.ofsc_crawler.entity.EnterpriseData2">
+            <id property="id" column="Id" jdbcType="BIGINT"/>
+            <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+            <result property="col101" column="col101" jdbcType="VARCHAR"/>
+            <result property="col102" column="col102" jdbcType="VARCHAR"/>
+            <result property="col103" column="col103" jdbcType="VARCHAR"/>
+            <result property="col104" column="col104" jdbcType="VARCHAR"/>
+            <result property="col105" column="col105" jdbcType="VARCHAR"/>
+            <result property="col106" column="col106" jdbcType="VARCHAR"/>
+            <result property="col107" column="col107" jdbcType="VARCHAR"/>
+            <result property="col108" column="col108" jdbcType="VARCHAR"/>
+            <result property="col109" column="col109" jdbcType="VARCHAR"/>
+            <result property="col110" column="col110" jdbcType="VARCHAR"/>
+            <result property="col111" column="col111" jdbcType="VARCHAR"/>
+            <result property="col112" column="col112" jdbcType="VARCHAR"/>
+            <result property="col113" column="col113" jdbcType="VARCHAR"/>
+            <result property="col114" column="col114" jdbcType="VARCHAR"/>
+            <result property="col115" column="col115" jdbcType="VARCHAR"/>
+            <result property="col116" column="col116" jdbcType="VARCHAR"/>
+            <result property="col117" column="col117" jdbcType="VARCHAR"/>
+            <result property="col118" column="col118" jdbcType="VARCHAR"/>
+            <result property="col119" column="col119" jdbcType="VARCHAR"/>
+            <result property="col120" column="col120" jdbcType="VARCHAR"/>
+            <result property="col121" column="col121" jdbcType="VARCHAR"/>
+            <result property="col122" column="col122" jdbcType="VARCHAR"/>
+            <result property="col123" column="col123" jdbcType="VARCHAR"/>
+            <result property="col124" column="col124" jdbcType="VARCHAR"/>
+            <result property="col125" column="col125" jdbcType="VARCHAR"/>
+            <result property="col126" column="col126" jdbcType="VARCHAR"/>
+            <result property="col127" column="col127" jdbcType="VARCHAR"/>
+            <result property="col128" column="col128" jdbcType="VARCHAR"/>
+            <result property="col129" column="col129" jdbcType="VARCHAR"/>
+            <result property="col130" column="col130" jdbcType="VARCHAR"/>
+            <result property="col131" column="col131" jdbcType="VARCHAR"/>
+            <result property="col132" column="col132" jdbcType="VARCHAR"/>
+            <result property="col133" column="col133" jdbcType="VARCHAR"/>
+            <result property="col134" column="col134" jdbcType="VARCHAR"/>
+            <result property="col135" column="col135" jdbcType="VARCHAR"/>
+            <result property="col136" column="col136" jdbcType="VARCHAR"/>
+            <result property="col137" column="col137" jdbcType="VARCHAR"/>
+            <result property="col138" column="col138" jdbcType="VARCHAR"/>
+            <result property="col139" column="col139" jdbcType="VARCHAR"/>
+            <result property="col140" column="col140" jdbcType="VARCHAR"/>
+            <result property="col141" column="col141" jdbcType="VARCHAR"/>
+            <result property="col142" column="col142" jdbcType="VARCHAR"/>
+            <result property="col143" column="col143" jdbcType="VARCHAR"/>
+            <result property="col144" column="col144" jdbcType="VARCHAR"/>
+            <result property="col145" column="col145" jdbcType="VARCHAR"/>
+            <result property="col146" column="col146" jdbcType="VARCHAR"/>
+            <result property="col147" column="col147" jdbcType="VARCHAR"/>
+            <result property="col148" column="col148" jdbcType="VARCHAR"/>
+            <result property="col149" column="col149" jdbcType="VARCHAR"/>
+            <result property="col150" column="col150" jdbcType="VARCHAR"/>
+            <result property="col151" column="col151" jdbcType="VARCHAR"/>
+            <result property="col152" column="col152" jdbcType="VARCHAR"/>
+            <result property="col153" column="col153" jdbcType="VARCHAR"/>
+            <result property="col154" column="col154" jdbcType="VARCHAR"/>
+            <result property="col155" column="col155" jdbcType="VARCHAR"/>
+            <result property="col156" column="col156" jdbcType="VARCHAR"/>
+            <result property="col157" column="col157" jdbcType="VARCHAR"/>
+            <result property="col158" column="col158" jdbcType="VARCHAR"/>
+            <result property="col159" column="col159" jdbcType="VARCHAR"/>
+            <result property="col160" column="col160" jdbcType="VARCHAR"/>
+            <result property="col161" column="col161" jdbcType="VARCHAR"/>
+            <result property="col162" column="col162" jdbcType="VARCHAR"/>
+            <result property="col163" column="col163" jdbcType="VARCHAR"/>
+            <result property="col164" column="col164" jdbcType="VARCHAR"/>
+            <result property="col165" column="col165" jdbcType="VARCHAR"/>
+            <result property="col166" column="col166" jdbcType="VARCHAR"/>
+            <result property="col167" column="col167" jdbcType="VARCHAR"/>
+            <result property="col168" column="col168" jdbcType="VARCHAR"/>
+            <result property="col169" column="col169" jdbcType="VARCHAR"/>
+            <result property="col170" column="col170" jdbcType="VARCHAR"/>
+            <result property="col171" column="col171" jdbcType="VARCHAR"/>
+            <result property="col172" column="col172" jdbcType="VARCHAR"/>
+            <result property="col173" column="col173" jdbcType="VARCHAR"/>
+            <result property="col174" column="col174" jdbcType="VARCHAR"/>
+            <result property="col175" column="col175" jdbcType="VARCHAR"/>
+            <result property="col176" column="col176" jdbcType="VARCHAR"/>
+            <result property="col177" column="col177" jdbcType="VARCHAR"/>
+            <result property="col178" column="col178" jdbcType="VARCHAR"/>
+            <result property="col179" column="col179" jdbcType="VARCHAR"/>
+            <result property="col180" column="col180" jdbcType="VARCHAR"/>
+            <result property="col181" column="col181" jdbcType="VARCHAR"/>
+            <result property="col182" column="col182" jdbcType="VARCHAR"/>
+            <result property="col183" column="col183" jdbcType="VARCHAR"/>
+            <result property="col184" column="col184" jdbcType="VARCHAR"/>
+            <result property="col185" column="col185" jdbcType="VARCHAR"/>
+            <result property="col186" column="col186" jdbcType="VARCHAR"/>
+            <result property="col187" column="col187" jdbcType="VARCHAR"/>
+            <result property="col188" column="col188" jdbcType="VARCHAR"/>
+            <result property="col189" column="col189" jdbcType="VARCHAR"/>
+            <result property="col190" column="col190" jdbcType="VARCHAR"/>
+            <result property="col191" column="col191" jdbcType="VARCHAR"/>
+            <result property="col192" column="col192" jdbcType="VARCHAR"/>
+            <result property="col193" column="col193" jdbcType="VARCHAR"/>
+            <result property="col194" column="col194" jdbcType="VARCHAR"/>
+            <result property="col195" column="col195" jdbcType="VARCHAR"/>
+            <result property="col196" column="col196" jdbcType="VARCHAR"/>
+            <result property="col197" column="col197" jdbcType="VARCHAR"/>
+            <result property="col198" column="col198" jdbcType="VARCHAR"/>
+            <result property="col199" column="col199" jdbcType="VARCHAR"/>
+            <result property="col200" column="col200" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        Id,activity_id,col101,
+        col102,col103,col104,
+        col105,col106,col107,
+        col108,col109,col110,
+        col111,col112,col113,
+        col114,col115,col116,
+        col117,col118,col119,
+        col120,col121,col122,
+        col123,col124,col125,
+        col126,col127,col128,
+        col129,col130,col131,
+        col132,col133,col134,
+        col135,col136,col137,
+        col138,col139,col140,
+        col141,col142,col143,
+        col144,col145,col146,
+        col147,col148,col149,
+        col150,col151,col152,
+        col153,col154,col155,
+        col156,col157,col158,
+        col159,col160,col161,
+        col162,col163,col164,
+        col165,col166,col167,
+        col168,col169,col170,
+        col171,col172,col173,
+        col174,col175,col176,
+        col177,col178,col179,
+        col180,col181,col182,
+        col183,col184,col185,
+        col186,col187,col188,
+        col189,col190,col191,
+        col192,col193,col194,
+        col195,col196,col197,
+        col198,col199,col200
+    </sql>
+</mapper>
