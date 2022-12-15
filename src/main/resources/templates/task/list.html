@@ -54,12 +54,12 @@
 						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
-									<th>#</th>
-									<th>lastName</th>
-									<th>email</th>
-									<th>gender</th>
-									<th>department</th>
-									<th>birth</th>
+									<th>userName</th>
+									<th>syncDate</th>
+									<th>runStatus</th>
+									<th>status</th>
+									<th>createTime</th>
+									<th>createBy</th>
 									<th>操作</th>
 								</tr>
 							</thead>
@@ -109,7 +109,7 @@
 					type : "post",
 					contentType:'application/json',
 					async : true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-					url : "homeDataSearch", //请求发送到Page处
+					url : "taskSearch", //请求发送到Page处
 					data : JSON.stringify({'pageIndex':key,'pageSize':10}),
 					dataType : "json", //返回数据形式为json
 					success : function(result) {
@@ -118,12 +118,12 @@
 						for(var k in result){
 //将获得的数据加入col-md-12 column
 							temp+='<tr >\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col1+'</td>\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col2+'</td>\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col3+'</td>\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col4+'</td>\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col5+'</td>\n' +
-									'\t\t\t\t\t\t\t\t\t<td >'+result[k].col6+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].userName+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].syncDate+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].runStatus+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].status+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].createTime+'</td>\n' +
+									'\t\t\t\t\t\t\t\t\t<td >'+result[k].createBy+'</td>\n' +
 									'\t\t\t\t\t\t\t\t\t<td>\n' +
 									'\t\t\t\t\t\t\t\t\t\t<a type="button" class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">修改</a>\n' +
 									'\t\t\t\t\t\t\t\t\t\t<button th:attr="del_uri=@{/emp/}+${emp.id}" type="submit" class="btn btn-sm btn-danger deleteEmp">删除</button>\n' +

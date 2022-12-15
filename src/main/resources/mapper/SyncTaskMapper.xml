@@ -9,6 +9,7 @@
             <result property="userName" column="user_name" jdbcType="VARCHAR"/>
             <result property="syncDate" column="sync_date" jdbcType="VARCHAR"/>
             <result property="triggerDate" column="trigger_date" jdbcType="VARCHAR"/>
+            <result property="runStatus" column="run_status" jdbcType="VARCHAR"/>
             <result property="status" column="status" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
@@ -20,4 +21,13 @@
         trigger_date,status,create_time,
         create_by,comment
     </sql>
+
+    <select id="getAllData" resultMap="BaseResultMap">
+        select id,user_name,sync_date,
+               trigger_time,start_time,end_time,run_status,status,create_time,
+               create_by,comment from ofsc_sync_task limit ${(pageNumber ) * pageSize}, #{pageSize}
+    </select>
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*) from ofsc_sync_task
+    </select>
 </mapper>

@@ -2,7 +2,9 @@ package com.fiberhome.owtb.ofsc_crawler.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.fiberhome.owtb.ofsc_crawler.entity.HomeData1;
+import com.fiberhome.owtb.ofsc_crawler.entity.SyncTask;
 import com.fiberhome.owtb.ofsc_crawler.service.HomeData1Service;
+import com.fiberhome.owtb.ofsc_crawler.service.SyncTaskService;
 import com.fiberhome.owtb.ofsc_crawler.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,20 +22,20 @@ public class TaskController {
     UserService userService;
 
     @Autowired
-    private HomeData1Service homeData1Service;
+    private SyncTaskService taskService;
 
     @RequestMapping(value ="/taskSearch", method = RequestMethod.POST)
     @ResponseBody
-    public Object homeDataSearch(@RequestBody HomeData1 data1){
+    public Object taskSearch(@RequestBody SyncTask data1){
         ModelAndView v = new ModelAndView();
-        List<HomeData1> list =  homeData1Service.getAllData(data1.getPageIndex(),data1.getPageSize());
-        int total = homeData1Service.getTotal();
+        List<SyncTask> list =  taskService.getAllData(data1.getPageIndex(),data1.getPageSize());
+        int total = taskService.getTotal();
 //        v.setViewName("data_list");
 //        v.addObject("dataList",list);
 //        v.addObject("total",total);
         return JSONObject.toJSON(list);
     }
-    @RequestMapping(value ="/taskSearchGET", method = RequestMethod.GET)
+    /*@RequestMapping(value ="/taskSearchGET", method = RequestMethod.GET)
     public ModelAndView homeDataSearchGET(){
         ModelAndView v = new ModelAndView();
         List<HomeData1> list =  homeData1Service.getAllData(1,10);
@@ -42,7 +44,7 @@ public class TaskController {
         v.addObject("dataList",list);
         v.addObject("total",total);
         return v;
-    }
+    }*/
 
     @GetMapping("/tasks")
     public String list(Model model) {
