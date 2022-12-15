@@ -30,6 +30,12 @@ public class SyncTaskServiceImpl extends ServiceImpl<SyncTaskMapper, SyncTask>
     public int getTotal() {
         return taskMapper.getTotal();
     }
+
+    @Override
+    public int insert(SyncTask task) {
+        return taskMapper.insert(task);
+    }
+
 }
 
 

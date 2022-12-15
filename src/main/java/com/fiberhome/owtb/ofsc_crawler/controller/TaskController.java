@@ -12,6 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -53,8 +56,27 @@ public class TaskController {
         return "task/list";
     }
 
+    @GetMapping("/tasksRedAdd")
+    public String tasksRedAdd(Model model, HttpServletRequest request) {
+        SyncTask task = new SyncTask();
+        task.setUserName(request.getSession().getAttribute("loginUser").toString());
+        task.setSyncDate(new Date().toString());
+        model.addAttribute("emp", task);
+        return "task/add";
+    }
 
 
+    @PostMapping("/taskAdd")
+    public String taskAdd( SyncTask task) {
+        int count = taskService.insert(task);
+        return "task/list";
+    }
+    @GetMapping("/task/{id}")
+    public String toEditPage(@PathVariable("id") Integer id,Model model) {
+        SyncTask employee =  taskService.getById(id);
+        model.addAttribute("emp", employee);
+        return "task/add";
+    }
   /*  @RequestMapping(value = "/loginIn",method = RequestMethod.POST)
     public String login(String username,String password){
         UserBean userBean = userService.loginIn(username,password);

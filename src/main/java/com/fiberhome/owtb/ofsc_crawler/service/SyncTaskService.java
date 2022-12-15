@@ -15,4 +15,7 @@ public interface SyncTaskService extends IService<SyncTask> {
     List<SyncTask> getAllData(Integer pageIndex, Integer pageSize);
 
     int getTotal();
+
+    int insert(SyncTask task);
+
 }
