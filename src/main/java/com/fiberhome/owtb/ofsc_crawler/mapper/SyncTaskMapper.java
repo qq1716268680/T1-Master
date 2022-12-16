@@ -23,6 +23,9 @@ public interface SyncTaskMapper extends BaseMapper<SyncTask> {
     int insert(SyncTask entity);
 
     @Override
+    int deleteById(Serializable id);
+
+    @Override
     int updateById(SyncTask entity);
 
     @Override

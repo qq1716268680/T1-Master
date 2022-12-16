@@ -83,6 +83,21 @@ public class TaskController {
         model.addAttribute("emp", employee);
         return "task/add";
     }
+
+    /*@GetMapping("/taskDelete/{id}")
+    public String taskDelete(@PathVariable("id") Integer id,Model model) {
+        boolean b = taskService.removeById(id);
+        return "task/list";
+    }*/
+
+    @DeleteMapping("/taskDelete/{id}")
+    public String deleteEmp(@PathVariable("id") Integer id) {
+
+        boolean b = taskService.removeById(id);
+        return "redirect:/tasks";
+    }
+
+
   /*  @RequestMapping(value = "/loginIn",method = RequestMethod.POST)
     public String login(String username,String password){
         UserBean userBean = userService.loginIn(username,password);

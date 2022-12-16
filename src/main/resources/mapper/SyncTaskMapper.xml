@@ -48,4 +48,9 @@
             sync_date = #{syncDate}
         where id =#{id}
     </update>
+
+    <delete id="deleteById">
+       delete from ofsc_sync_task
+        where id =#{id}
+    </delete>
 </mapper>
