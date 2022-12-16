@@ -53,7 +53,7 @@ to {
 			<div th:replace="commons/bar::#sidebar(activeUri='tasks')"></div>
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 				<form th:action="@{/taskAdd}" method="post">
-					<input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
+					<input type="hidden" name="_method" value="post" th:if="${emp!=null}"/>
 					<input type="hidden" name="id" th:value="${emp.id}" th:if="${emp!=null}"/>
 					<div class="form-group">
 						<label>UserName</label>
@@ -61,7 +61,7 @@ to {
 					</div>				
 					<div class="form-group">
 						<label>Sync Date</label>
-						<input name="syncDate" type="date" class="form-control" th:value="${emp!=null}?${#dates.format(emp.syncDate, 'yyyy-MM-dd')}" placeholder="please input sync date">
+						<input name="syncDate" type="date" class="form-control" th:value="${emp!=null}?${emp.syncDate}" placeholder="please input sync date">
 					</div>
 					<!--<div class="form-group">
 						<label>Gender</label><br> 

@@ -30,4 +30,22 @@
     <select id="getTotal" resultType="java.lang.Integer">
         select count(*) from ofsc_sync_task
     </select>
+
+    <insert id="insert">
+        insert into ofsc_sync_task(user_name,sync_date)
+        values (#{userName},#{syncDate})
+    </insert>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select id,user_name,sync_date,
+               trigger_time,start_time,end_time,run_status,status,create_time,
+               create_by,comment from ofsc_sync_task where id =#{id}
+    </select>
+
+    <update id="updateById">
+        update ofsc_sync_task
+        set user_name = #{userName},
+            sync_date = #{syncDate}
+        where id =#{id}
+    </update>
 </mapper>

@@ -16,6 +16,5 @@ public interface SyncTaskService extends IService<SyncTask> {
 
     int getTotal();
 
-    int insert(SyncTask task);
 
 }

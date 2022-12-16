@@ -68,7 +68,13 @@ public class TaskController {
 
     @PostMapping("/taskAdd")
     public String taskAdd( SyncTask task) {
-        int count = taskService.insert(task);
+        Boolean flag ;
+        if(task.getId() == null){
+            flag = taskService.save(task);
+        }else{
+            flag = taskService.updateById(task);
+        }
+
         return "task/list";
     }
     @GetMapping("/task/{id}")

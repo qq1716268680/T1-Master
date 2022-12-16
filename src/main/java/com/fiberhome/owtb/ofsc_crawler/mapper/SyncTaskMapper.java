@@ -3,6 +3,7 @@ package com.fiberhome.owtb.ofsc_crawler.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fiberhome.owtb.ofsc_crawler.entity.SyncTask;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -16,6 +17,16 @@ public interface SyncTaskMapper extends BaseMapper<SyncTask> {
     List<SyncTask> getAllData(Integer pageNumber, Integer pageSize);
 
     int getTotal();
+
+
+    @Override
+    int insert(SyncTask entity);
+
+    @Override
+    int updateById(SyncTask entity);
+
+    @Override
+    SyncTask selectById(Serializable id);
 }
 
 
